@@ -24,6 +24,11 @@ class AppServiceProvider extends ServiceProvider{
 }
 ```
 
+#### part 3
+```
+php artisan serve --port=8080
+```
+
 ---
 
 ```
