@@ -11,8 +11,9 @@ composer create-project laravel/laravel laravel_crud
 * laravel_crud\app\Providers
 
 ```php
-class AppServiceProvider extends ServiceProvider
-{
+use Illuminate\Support\Facades\Schema;
+
+class AppServiceProvider extends ServiceProvider{
 
     ...
 
@@ -21,4 +22,9 @@ class AppServiceProvider extends ServiceProvider
         Schema::defaultStringLength(255);
     }
 }
+```
+
+#### part 3
+```
+php artisan serve --port=8080
 ```
