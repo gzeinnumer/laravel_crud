@@ -60,7 +60,7 @@ class SiswaController extends Controller
 }
 ```
 * laravel_crud\resources\views\siswa\index.blade.php
-```php
+```html
 <h3>hallo zein<h3>
 ```
 ```
@@ -97,7 +97,7 @@ class SiswaController extends Controller
 }
 ```
 * laravel_crud\resources\views\siswa\index.blade.php
-```php
+```html
 hallo zein
 {{dd($data_siswa)}}
 ```
@@ -108,7 +108,7 @@ http://127.0.0.1:8081/siswa
 ---
 #### PART 5
 * laravel_crud\resources\views\siswa\index.blade.php
-```php
+```html
 <h1>Data Mahasiswa</h1>
 <table>
     <tr>
@@ -129,7 +129,7 @@ http://127.0.0.1:8081/siswa
     @endforeach
 </table>
 ```
-```php
+```
 http://127.0.0.1:8081/siswa
 ```
 
@@ -296,7 +296,7 @@ class SiswaModel extends Model
 ---
 #### PART 8
 * laravel_crud\resources\views\siswa\index.blade.php
-```php
+```html
 <table class="table table-hover">
     <tr>
         ...
