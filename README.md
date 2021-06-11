@@ -30,7 +30,7 @@ class AppServiceProvider extends ServiceProvider{
 //.env export SERVER_PORT="8080"
 php artisan serve --port=8080
 ```
-routes/web.php
+* laravel_crud\routes\web.php
 ```php
 Route::get('/siswa', 'SiswaController@index');
 
@@ -85,6 +85,7 @@ class SiswaModel extends Model
 }
 ```
 ```php
+<?php
 use App\Models\SiswaModel;
 class SiswaController extends Controller
 {
@@ -134,7 +135,6 @@ http://127.0.0.1:8081/siswa
 
 ---
 #### PART 6
-
 * laravel_crud\resources\views\siswa\index.blade.php
 
 https://getbootstrap.com/docs/5.0/content/tables/
@@ -214,48 +214,49 @@ https://stackoverflow.com/questions/18672452/left-align-and-right-align-within-d
 ```html
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel">Tambah Mahasiswa</h5>
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<form action="/siswa/create" method="POST">
-				{{csrf_field()}}
-				<div class="modal-body">
-					<div class="mb-3">
-						<label for="nama_depan" class="form-label">Nama Depan</label>
-						<input name="nama_depan" type="text" class="form-control" id="nama_depan" placeholder="Nama Depan">
-					</div>
-					<div class="mb-3">
-						<label for="nama_belakang" class="form-label">Nama Belakang</label>
-						<input name="nama_belakang" type="text" class="form-control" id="nama_belakang" placeholder="Nama Belakang">
-					</div>
-					<div class="mb-3">
-						<label for="jenis_kelamin" class="form-label">Pilih Jenis Kelamin</label>
-						<select name="jenis_kelamin" class="form-select" aria-label="Default select example">
-							<option selected disabled>Jenis kelamin</option>
-							<option value="L">Laki-laki</option>
-							<option value="P">Perempuan</option>
-						</select>
-					</div>
-					<div class="mb-3">
-						<label for="agama" class="form-label">Agama</label>
-						<input name="agama" type="text" class="form-control" id="agama" placeholder="Agama">
-					</div>
-					<div class="mb-3">
-						<label for="alamat" class="form-label">Alamat</label>
-						<textarea name="alamat" type="text" class="form-control" id="alamat" placeholder="Alamat"></textarea>
-					</div>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-					<button type="submit" class="btn btn-primary">Save changes</button>
-				</div>
-			</form>
-		</div>
-	</div>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Tambah Mahasiswa</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="/siswa/create" method="POST">
+                {{csrf_field()}}
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="nama_depan" class="form-label">Nama Depan</label>
+                        <input name="nama_depan" type="text" class="form-control" id="nama_depan" placeholder="Nama Depan" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="nama_belakang" class="form-label">Nama Belakang</label>
+                        <input name="nama_belakang" type="text" class="form-control" id="nama_belakang" placeholder="Nama Belakang" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="jenis_kelamin" class="form-label">Pilih Jenis Kelamin</label>
+                        <select name="jenis_kelamin" class="form-select" aria-label="Default select example">
+                            <option selected disabled>Jenis kelamin</option>
+                            <option value="L">Laki-laki</option>
+                            <option value="P">Perempuan</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="agama" class="form-label">Agama</label>
+                        <input name="agama" type="text" class="form-control" id="agama" placeholder="Agama" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="alamat" class="form-label">Alamat</label>
+                        <textarea name="alamat" type="text" class="form-control" id="alamat" placeholder="Alamat"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
+
 ```
 * laravel_crud\routes\web.php
 ```php
@@ -267,18 +268,80 @@ Route::prefix('siswa')->group(function () {
 * laravel_crud\app\Http\Controllers\SiswaController.php
 ```php
 <?php
-namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
-
 class SiswaController extends Controller
 {
-    public function index()
+    public function create(Request $r)
     {
-        //return "ini list mahasiswa";
-        return view('siswa.index');
+        //return "coba";
+        // return $r->all();
+        SiswaModel::create($r->all());
+        return redirect('/siswa')->with('sukses','Data berhasil diinput');
     }
 }
+```
+* laravel_crud\app\Models\SiswaModel.php
+```php
+<?php
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class SiswaModel extends Model
+{
+    protected $table = "siswa";
+    protected $fillable = ['nama_depan', 'nama_belakang','jenis_kelamin', 'agama','alamat'];
+}
+```
+
+---
+#### PART 8
+* laravel_crud\resources\views\siswa\index.blade.php
+```php
+<table class="table table-hover">
+    <tr>
+        ...
+        <th>Alamat</th>
+        <th>Aksi</th>
+    </tr>
+    @foreach($data_siswa as $d)
+        <tr>
+            ...
+            <td>{{$d->alamat}}</td>
+            <td><a href="/siswa/{{$d->id}}/edit" class="btn btn-warning btn-sm">Edit</a></td>
+        </tr>
+    @endforeach
+</table>
+```
+* laravel_crud\routes\web.php
+```php
+Route::prefix('siswa')->group(function () {
+    ...
+    Route::get('{id}/edit', [SiswaController::class, 'edit']);
+    Route::post('{id}/update', [SiswaController::class, 'update']);
+});
+```
+* laravel_crud\app\Http\Controllers\SiswaController.php
+```php
+<?php
+class SiswaController extends Controller
+{
+    public function edit($id)
+    {
+        $siswa = SiswaModel::find($id);
+        return view('siswa/edit');
+    }
+
+    public function update(Request $r, $id)
+    {
+        $data_siswa = SiswaModel::find($id);
+        $data_siswa->update($r->all());
+        return redirect('/siswa')->with('sukses','Data berhasil diupdate');
+    }
+}
+```
+```
+http://127.0.0.1:8081/siswa
+http://127.0.0.1:8081/siswa/1/edit
 ```
 
 
