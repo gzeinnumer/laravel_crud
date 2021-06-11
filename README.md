@@ -1,14 +1,14 @@
 # laravel_crud
  Simple Laravel
 
-#
-#### part 1
+---
+#### PART 1
 ```
 composer create-project laravel/laravel laravel_crud
 ```
 
-#
-#### part 2
+---
+#### PART 2
 
 * laravel_crud\app\Providers
 
@@ -26,8 +26,8 @@ class AppServiceProvider extends ServiceProvider{
 }
 ```
 
-#
-#### part 3
+---
+#### PART 3
 ```
 //.env export SERVER_PORT="8080"
 php artisan serve --port=8080
@@ -69,8 +69,8 @@ class SiswaController extends Controller
 http://127.0.0.1:8080/siswa
 ```
 
-#
-#### part 4
+---
+#### PART 4
 ```
 php artisan make:model SiswaModel
 ```
