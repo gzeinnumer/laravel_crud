@@ -19,4 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/siswa', [SiswaController::class, 'index']);
+Route::prefix('siswa')->group(function () {
+    Route::get('/', [SiswaController::class, 'index']);
+    Route::post('/create', [SiswaController::class, 'create']);
+});
