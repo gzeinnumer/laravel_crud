@@ -77,7 +77,6 @@ php artisan make:model SiswaModel
 laravel_crud\app\Models\SiswaModel.php
 ```php
 <?php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
@@ -88,11 +87,12 @@ class SiswaModel extends Model
 }
 ```
 ```php
+use App\Models\SiswaModel;
 class SiswaController extends Controller
 {
     public function index()
     {
-        $data_siswa = \App\Models\SiswaModel::all();
+        $data_siswa = SiswaModel::all();
         return view('siswa.index',['data_siswa'=>$data_siswa]);
     }
 }
