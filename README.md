@@ -30,7 +30,7 @@ class AppServiceProvider extends ServiceProvider{
 //.env export SERVER_PORT="8080"
 php artisan serve --port=8080
 ```
-routes/web.php
+* laravel_crud\routes\web.php
 ```php
 Route::get('/siswa', 'SiswaController@index');
 
@@ -134,7 +134,6 @@ http://127.0.0.1:8081/siswa
 
 ---
 #### PART 6
-
 * laravel_crud\resources\views\siswa\index.blade.php
 
 https://getbootstrap.com/docs/5.0/content/tables/
@@ -273,11 +272,26 @@ use Illuminate\Http\Request;
 
 class SiswaController extends Controller
 {
-    public function index()
+    public function create(Request $r)
     {
-        //return "ini list mahasiswa";
-        return view('siswa.index');
+        //return "coba";
+        // return $r->all();
+        SiswaModel::create($r->all());
+        return redirect('/siswa')->with('sukses','Data berhasil diinput');
     }
+}
+```
+* laravel_crud\app\Models\SiswaModel.php
+```php
+<?php
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class SiswaModel extends Model
+{
+    protected $table = "siswa";
+	protected $fillable = ['nama_depan', 'nama_belakang','jenis_kelamin', 'agama','alamat'];
 }
 ```
 
