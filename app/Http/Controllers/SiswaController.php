@@ -12,4 +12,10 @@ class SiswaController extends Controller
         $data_siswa = SiswaModel::all();
         return view('siswa.index',['data_siswa'=>$data_siswa]);
     }
+
+    public function create(Request $r)
+    {
+        //return "coba";
+        return $r->all();
+    }
 }
