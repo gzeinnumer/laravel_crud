@@ -141,10 +141,6 @@ http://127.0.0.1:8081/siswa
 
 laravel_crud\resources\views\siswa\index.blade.php
 
-https://getbootstrap.com/docs/5.0/content/tables/
-
-https://stackoverflow.com/questions/18672452/left-align-and-right-align-within-div-in-bootstrap
-
 ```html
 <html lang="en">
 <head>
