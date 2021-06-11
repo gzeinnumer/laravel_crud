@@ -108,6 +108,9 @@ http://127.0.0.1:8081/siswa
 
 ---
 #### PART 5
+
+laravel_crud\resources\views\siswa\index.blade.php
+
 ```php
 <h1>Data Mahasiswa</h1>
 <table>
