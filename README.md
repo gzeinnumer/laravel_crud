@@ -9,9 +9,7 @@ composer create-project laravel/laravel laravel_crud
 
 ---
 #### PART 2
-
 * laravel_crud\app\Providers
-
 ```php
 use Illuminate\Support\Facades\Schema;
 
@@ -32,7 +30,7 @@ class AppServiceProvider extends ServiceProvider{
 //.env export SERVER_PORT="8080"
 php artisan serve --port=8080
 ```
-routes/web.php
+* laravel_crud\routes\web.php
 ```php
 Route::get('/siswa', 'SiswaController@index');
 
@@ -45,7 +43,7 @@ Route::get('/users', 'App\Http\Controllers\UserController@index');
 ```
 php artisan make:controller SiswaController
 ```
-SiswaController.php
+* laravel_crud\app\Http\Controllers\SiswaController.php
 ```php
 <?php
 namespace App\Http\Controllers;
@@ -74,7 +72,7 @@ http://127.0.0.1:8080/siswa
 ```
 php artisan make:model SiswaModel
 ```
-laravel_crud\app\Models\SiswaModel.php
+* laravel_crud\app\Models\SiswaModel.php
 ```php
 <?php
 namespace App\Models;
@@ -87,6 +85,7 @@ class SiswaModel extends Model
 }
 ```
 ```php
+<?php
 use App\Models\SiswaModel;
 class SiswaController extends Controller
 {
@@ -97,7 +96,7 @@ class SiswaController extends Controller
     }
 }
 ```
-laravel_crud\resources\views\siswa\index.blade.php
+* laravel_crud\resources\views\siswa\index.blade.php
 ```php
 hallo zein
 {{dd($data_siswa)}}
