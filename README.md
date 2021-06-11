@@ -85,6 +85,7 @@ class SiswaModel extends Model
 }
 ```
 ```php
+<?php
 use App\Models\SiswaModel;
 class SiswaController extends Controller
 {
@@ -267,10 +268,6 @@ Route::prefix('siswa')->group(function () {
 * laravel_crud\app\Http\Controllers\SiswaController.php
 ```php
 <?php
-namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
-
 class SiswaController extends Controller
 {
     public function create(Request $r)
