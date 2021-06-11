@@ -69,6 +69,43 @@ class SiswaController extends Controller
 http://127.0.0.1:8080/siswa
 ```
 
+#
+#### part 4
+```
+php artisan make:model SiswaModel
+```
+laravel_crud\app\Models\SiswaModel.php
+```php
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class SiswaModel extends Model
+{
+    protected $table = "siswa";
+}
+```
+```php
+class SiswaController extends Controller
+{
+    public function index()
+    {
+        $data_siswa = \App\Models\SiswaModel::all();
+        return view('siswa.index',['data_siswa'=>$data_siswa]);
+    }
+}
+```
+laravel_crud\resources\views\siswa\index.blade.php
+```php
+hallo zein
+{{dd($data_siswa)}}
+```
+```
+http://127.0.0.1:8081/siswa
+```
+
 ---
 
 ```
