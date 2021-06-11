@@ -22,4 +22,6 @@ Route::get('/', function () {
 Route::prefix('siswa')->group(function () {
     Route::get('/', [SiswaController::class, 'index']);
     Route::post('/create', [SiswaController::class, 'create']);
+    Route::get('{id}/edit', [SiswaController::class, 'edit']);
+    Route::post('{id}/update', [SiswaController::class, 'update']);
 });
