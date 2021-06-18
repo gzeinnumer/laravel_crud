@@ -7,16 +7,18 @@ use App\Models\SiswaModel;
 
 class SiswaController extends Controller
 {
-    public function index()
+    public function index(Request $r)
     {
-        $data_siswa = SiswaModel::all();
+        if($r->has('cari')){
+            $data_siswa = SiswaModel::where('nama_depan','LIKE','%'.$r->cari.'%')->get();
+        } else{
+            $data_siswa = SiswaModel::all();
+        }
         return view('siswa.index',['data_siswa'=>$data_siswa]);
     }
 
     public function create(Request $r)
     {
-        //return "coba";
-        // return $r->all();
         SiswaModel::create($r->all());
         return redirect('/siswa')->with('sukses','Data berhasil diinput');
     }
@@ -32,5 +34,12 @@ class SiswaController extends Controller
         $data_siswa = SiswaModel::find($id);
         $data_siswa->update($r->all());
         return redirect('/siswa')->with('sukses','Data berhasil diupdate');
+    }
+
+    public function delete(Request $r, $id)
+    {
+        $data_siswa = SiswaModel::find($id);
+        $data_siswa->delete();
+        return redirect('/siswa')->with('sukses','Data berhasil dihapus');
     }
 }
