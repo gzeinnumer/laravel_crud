@@ -2,13 +2,13 @@
  Simple Laravel
 
 ---
-#### PART 1
+## PART 1
 ```
 composer create-project laravel/laravel laravel_crud
 ```
 
 ---
-#### PART 2
+## PART 2
 * laravel_crud\app\Providers
 ```php
 use Illuminate\Support\Facades\Schema;
@@ -25,7 +25,7 @@ class AppServiceProvider extends ServiceProvider{
 ```
 
 ---
-#### PART 3
+## PART 3
 ```
 //.env export SERVER_PORT="8080"
 php artisan serve --port=8080
@@ -68,7 +68,7 @@ http://127.0.0.1:8080/siswa
 ```
 
 ---
-#### PART 4
+## PART 4
 ```
 php artisan make:model SiswaModel
 ```
@@ -106,7 +106,7 @@ http://127.0.0.1:8081/siswa
 ```
 
 ---
-#### PART 5
+## PART 5
 * laravel_crud\resources\views\siswa\index.blade.php
 ```php
 <h1>Data Mahasiswa</h1>
@@ -134,7 +134,7 @@ http://127.0.0.1:8081/siswa
 ```
 
 ---
-#### PART 6
+## PART 6
 * laravel_crud\resources\views\siswa\index.blade.php
 
 https://getbootstrap.com/docs/5.0/content/tables/
@@ -209,7 +209,7 @@ https://stackoverflow.com/questions/18672452/left-align-and-right-align-within-d
 ```
 
 ---
-#### PART 7
+## PART 7
 * laravel_crud\resources\views\siswa\index.blade.php
 ```php
 <!-- Modal -->
@@ -294,7 +294,7 @@ class SiswaModel extends Model
 ```
 
 ---
-#### PART 8
+## PART 8
 * laravel_crud\resources\views\siswa\index.blade.php
 ```php
 <table class="table table-hover">
@@ -345,7 +345,7 @@ http://127.0.0.1:8081/siswa/1/edit
 ```
 
 ---
-#### PART 9
+## PART 9
 * laravel_crud\resources\views\layout\master.blade.php
 ```php
 <html lang="en">
@@ -527,7 +527,7 @@ http://127.0.0.1:8081/siswa/1/edit
 ```
 
 ---
-#### PART 10
+## PART 10
 * laravel_crud\routes\web.php
 ```php
 Route::prefix('siswa')->group(function () {
@@ -571,7 +571,7 @@ http://localhost:8081/siswa
 ```
 
 ---
-#### PART 11
+## PART 11
 * laravel_crud\app\Http\Controllers\SiswaController.php
 ```php
 <?php
@@ -593,7 +593,7 @@ http://localhost:8081/siswa?cari=R
 ```
 
 ---
-#### PART 12
+## PART 12
 Download dan Copy folder `assets` didalam folder dan paste dalam folder `public` di project `laravel_crud`
 ```
 https://www.themeineed.com/free-download/?did=30520&file=3
