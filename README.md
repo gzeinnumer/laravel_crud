@@ -19,7 +19,7 @@ class AppServiceProvider extends ServiceProvider{
 
     public function boot()
     {
-        Schema::defaultStringLength(255);
+        Schema::defaultStringLength(191);
     }
 }
 ```
@@ -883,6 +883,237 @@ https://www.themeineed.com/free-download/?did=30520&file=3
 </div>
 @endsection
 ```
+
+---
+## PART 13
+* laravel_crud\routes\web.php
+```php
+Route::get('/dashboard', [DashboardController::class, 'index']);
+```
+```
+php artisan make:controller DashboardController
+```
+* laravel_crud\app\Http\Controllers\DashboardController.php
+```php
+<?php
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class DashboardController extends Controller
+{
+    public function index()
+    {
+        return view('dashboard.index');
+    }
+}
+```
+* laravel_crud\resources\views\home.blade.php
+```php
+hallo zein
+```
+* laravel_crud\resources\views\dashboard\index.blade.php
+```php
+@extends('layout.master') 
+
+@section('content')
+    Dasboard
+@endsection
+```
+```
+php artisan make:controller AuthController
+php artisan migrate
+//jika ada error ganti 255 jadi 191
+```
+```
+php artisan tinker
+$user = new \App\Models\User;
+App\Models\User {#3419}
+$user->name = "Zein"                                                                                                                                    >>> $user->name = "Zein"
+=> "Zein"
+$user->email = "zein@gmail.com"
+=> "zein@gmail.com"
+$user->password = bcrypt('rahasia')
+=> "$2y$10$CcKFHGZ.dZmNFaL5I160DuLnydgCcFiEP47VgHhe48EG2fmuM1ddC"
+$user->remember_token = "9uQ3MqQPp7WeCw3lE8IysGBsuscGdz3aXBQ8r8soDEAdTftidaP4zdf0Xlw3"
+=> "9uQ3MqQPp7WeCw3lE8IysGBsuscGdz3aXBQ8r8soDEAdTftidaP4zdf0Xlw3"
+$user->save()
+=> true
+```
+* laravel_crud\app\Http\Controllers\DashboardController.php
+```php
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class DashboardController extends Controller
+{
+    public function index()
+    {
+        return view('dashboard.index');
+    }
+}
+```
+* laravel_crud\app\Http\Controllers\AuthController.php
+```php
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Auth;
+
+class AuthController extends Controller
+{
+    public function login()
+    {
+        return view('auth.login');
+    }
+
+    public function postLogin(Request $r)
+    {
+        //dd($r->all());
+        if(Auth::attempt($r->only('email','password'))){
+            return redirect('/dashboard');
+        } 
+        return redirect('/login');
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect('/login');
+    }
+}
+```
+* laravel_crud\resources\views\auth\login.blade.php
+```php
+<!doctype html>
+<html lang="en" class="fullscreen-bg">
+
+<head>
+	<title>Login | Klorofil - Free Bootstrap Dashboard Template</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<!-- VENDOR CSS -->
+	<link rel="stylesheet" href="{{asset('admin/assets/css/bootstrap.min.css')}}">
+	<link rel="stylesheet" href="{{asset('admin/assets/vendor/font-awesome/css/font-awesome.min.css')}}">
+	<link rel="stylesheet" href="{{asset('admin/assets/vendor/linearicons/style.css')}}">
+	<!-- MAIN CSS -->
+	<link rel="stylesheet" href="{{asset('admin/assets/css/main.css')}}">
+	<!-- FOR DEMO PURPOSES ONLY. You should remove this in your project -->
+	<link rel="stylesheet" href="{{asset('admin/assets/css/demo.css')}}">
+	<!-- GOOGLE FONTS -->
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+	<!-- ICONS -->
+	<link rel="apple-touch-icon" sizes="76x76" href="{{asset('admin/assets/img/apple-icon.png')}}">
+	<link rel="icon" type="image/png" sizes="96x96" href="{{asset('admin/assets/img/favicon.png')}}">
+</head>
+
+<body>
+	<!-- WRAPPER -->
+	<div id="wrapper">
+		<div class="vertical-align-wrap">
+			<div class="vertical-align-middle">
+				<div class="auth-box ">
+					<div class="left">
+						<div class="content">
+							<div class="header">
+								<div class="logo text-center"><img src="{{asset('admin/assets/img/logo-dark.png')}}" alt="Klorofil Logo"></div>
+								<p class="lead">Login</p>
+							</div>
+                            <form class="form-auth-small" action="/postLogin" method="post">
+                                {{csrf_field()}}
+								<div class="form-group">
+									<label for="signin-email" class="control-label sr-only">Email</label>
+									<input name="email" type="email" class="form-control" id="signin-email" value="zein@gmail.com" placeholder="Email">
+								</div>
+								<div class="form-group">
+									<label for="signin-password" class="control-label sr-only">Password</label>
+									<input name="password" type="password" class="form-control" id="signin-password" value="rahasia" placeholder="Password">
+								</div>
+								<button type="submit" class="btn btn-primary btn-lg btn-block">LOGIN</button>
+							</form>
+						</div>
+					</div>
+					<div class="right">
+						<div class="overlay"></div>
+						<div class="content text">
+							<h1 class="heading">Aplikasi Pengelolaan Data Siswa</h1>
+							<p>by GZeinNumer</p>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- END WRAPPER -->
+</body>
+
+</html>
+```
+* laravel_crud\resources\views\layout\include\_navbar.blade.php
+```php
+<nav class="navbar navbar-default navbar-fixed-top">
+	
+	...
+	
+    <div class="container-fluid">
+		
+		...
+		
+        <div id="navbar-menu">
+            <ul class="nav navbar-nav navbar-right">
+				
+				...
+				
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{asset('admin/assets/img/user.png')}}" class="img-circle" alt="Avatar"> <span>{{auth()->user()->name}}</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        
+						...
+						
+                        <li><a href="/logout"><i class="lnr lnr-exit"></i> <span>Logout</span></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+```
+* laravel_crud\routes\web.php
+```php
+use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\AuthController;
+
+// Route::get('/', function () {
+//     return view('home');
+// });
+
+Route::prefix('/')->group(function () {
+    Route::get('login', [AuthController::class, 'login'])->name('login');
+    Route::post('postLogin', [AuthController::class, 'postLogin']);
+    Route::get('logout', [AuthController::class, 'logout']);
+});
+
+Route::group(['middleware' => 'auth'], function(){
+
+    Route::get('/dashboard', [DashboardController::class, 'index']);
+
+    Route::prefix('siswa')->group(function () {
+        Route::get('/', [SiswaController::class, 'index']);
+        Route::post('/create', [SiswaController::class, 'create']);
+        Route::get('{id}/edit', [SiswaController::class, 'edit']);
+        Route::post('{id}/update', [SiswaController::class, 'update']);
+        Route::get('{id}/delete', [SiswaController::class, 'delete']);
+    });
+});
+# ```
 
 ---
 
