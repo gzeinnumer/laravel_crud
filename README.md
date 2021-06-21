@@ -1113,7 +1113,7 @@ Route::group(['middleware' => 'auth'], function(){
         Route::get('{id}/delete', [SiswaController::class, 'delete']);
     });
 });
-# ```
+```
 
 ---
 
