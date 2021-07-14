@@ -39,3 +39,6 @@ Route::group(['middleware' => 'auth'], function(){
         Route::get('{id}/delete', [SiswaController::class, 'delete']);
     });
 });
+
+
+Route::get('test/maps', [SiswaController::class, 'Get_Address_From_Google_Maps']);
