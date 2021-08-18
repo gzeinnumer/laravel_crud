@@ -53,8 +53,6 @@ http://localhost:8081/siswa
 ---
 
 
----
-
 ```
 Copyright 2021 M. Fadli Zein
 ```
