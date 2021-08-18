@@ -1,6 +1,10 @@
 # laravel_crud
  Simple Laravel
 
+---
+### [PART 12](https://github.com/gzeinnumer/laravel_crud/tree/part_12)
+---
+
 ## PART 13
 * laravel_crud\routes\web.php
 ```php
@@ -141,6 +145,9 @@ Route::group(['middleware' => 'auth'], function(){
 });
 ```
 
+
+---
+### [PART 14](https://github.com/gzeinnumer/laravel_crud/tree/part_14)
 ---
 
 ```
