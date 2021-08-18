@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>Dashboard | Klorofil - Free Bootstrap Dashboard Template</title>
+	<title>CRUD Mahasiswa</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -24,17 +24,17 @@
 <body>
 	<!-- WRAPPER -->
 	<div id="wrapper">
-        <!-- NAVBAR -->
-        @include('layout.include._navbar')
+		<!-- NAVBAR -->
+		@include('layout.include._navbar')
 		<!-- END NAVBAR -->
 		<!-- LEFT SIDEBAR -->
-        @include('layout.include._sidebar')
+		@include('layout.include._sidebar')
 		<!-- END LEFT SIDEBAR -->
-        <!-- MAIN -->
-        @yield('content')
+		<!-- MAIN -->
+		@yield('content')
 		<!-- END MAIN -->
 		<div class="clearfix"></div>
-        @include('layout.include._footer')
+		@include('layout.include._footer')
 	</div>
 	<!-- END WRAPPER -->
 	<!-- Javascript -->

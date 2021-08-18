@@ -1,4 +1,4 @@
-@extends('layout.master') 
+@extends('layout.master')
 
 @section('content')
 <div class="main">
@@ -33,8 +33,8 @@
                                 <tbody>
                                     @foreach($data_siswa as $d)
                                     <tr>
-                                        <td>{{$d->nama_depan}}</td>
-                                        <td>{{$d->nama_belakang}}</td>
+                                        <td><a href="/siswa/{{$d->id}}/profile">{{$d->nama_depan}}</a></td>
+                                        <td><a href="/siswa/{{$d->id}}/profile">{{$d->nama_belakang}}</a></td>
                                         <td>{{$d->jenis_kelamin}}</td>
                                         <td>{{$d->agama}}</td>
                                         <td>{{$d->alamat}}</td>

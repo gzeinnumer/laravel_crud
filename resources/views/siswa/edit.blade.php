@@ -1,4 +1,4 @@
-@extends('layout.master') 
+@extends('layout.master')
 
 @section('content')
 <div class="main">
@@ -11,7 +11,7 @@
                             <h3 class="panel-title">Inputs</h3>
                         </div>
                         <div class="panel-body">
-                            <form action="/siswa/{{$data_siswa->id}}/update" method="POST">
+                            <form action="/siswa/{{$data_siswa->id}}/update" method="POST" enctype="multipart/form-data">
                                 {{csrf_field()}}
                                 <div class="form-group">
                                     <label for="nama_depan" class="form-label">Nama Depan</label>
@@ -36,6 +36,10 @@
                                 <div class="form-group">
                                     <label for="alamat" class="form-label">Alamat</label>
                                     <textarea name="alamat" type="text" class="form-control" id="alamat" placeholder="Alamat">{{$data_siswa->alamat}}</textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="alamat" class="form-label">Avatar</label>
+                                    <input type="file" name="avatar" class="form-control">
                                 </div>
                                 <div class="form-group float-end">
                                     <a href="/siswa" class="btn btn-secondary">Back</a>
