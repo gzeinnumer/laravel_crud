@@ -2,12 +2,6 @@
  Simple Laravel
 
 ---
-#### PART 1
-```
-composer create-project laravel/laravel laravel_crud
-```
-
----
 #### PART 2
 * laravel_crud\app\Providers
 ```php
