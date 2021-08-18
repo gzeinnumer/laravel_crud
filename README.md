@@ -5,7 +5,7 @@
 ### [PART 11](https://github.com/gzeinnumer/laravel_crud/tree/part_11)
 ---
  
-## PART 12
+#### PART 12
 Download dan Copy folder `assets` didalam folder dan paste dalam folder `public` di project `laravel_crud`
 ```
 https://www.themeineed.com/free-download/?did=30520&file=3
