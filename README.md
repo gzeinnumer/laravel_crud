@@ -5,7 +5,6 @@
 ### [PART 1](https://github.com/gzeinnumer/laravel_crud/tree/part_1)
 ---
 
----
 #### PART 2
 * laravel_crud\app\Providers
 ```php
@@ -24,8 +23,6 @@ class AppServiceProvider extends ServiceProvider{
 
 ---
 ### [PART 3](https://github.com/gzeinnumer/laravel_crud/tree/part_3)
----
-
 ---
 
 ```
