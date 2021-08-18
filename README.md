@@ -2,6 +2,9 @@
  Simple Laravel
 
 ---
+### [PART 3](https://github.com/gzeinnumer/laravel_crud/tree/part_3)
+---
+
 #### PART 4
 ```
 php artisan make:model SiswaModel
@@ -39,6 +42,8 @@ hallo zein
 http://127.0.0.1:8081/siswa
 ```
 
+---
+### [PART 5](https://github.com/gzeinnumer/laravel_crud/tree/part_5)
 ---
 
 ```
