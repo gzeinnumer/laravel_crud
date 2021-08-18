@@ -1,5 +1,9 @@
 # laravel_crud
  Simple Laravel
+
+---
+### [PART 8](https://github.com/gzeinnumer/laravel_crud/tree/part_8)
+---
  
 #### PART 9
 * laravel_crud\resources\views\layout\master.blade.php
@@ -182,7 +186,8 @@
 @endsection
 ```
 
-
+---
+### [PART 10](https://github.com/gzeinnumer/laravel_crud/tree/part_10)
 ---
 
 ```
