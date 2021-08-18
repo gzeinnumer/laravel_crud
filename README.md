@@ -1,6 +1,10 @@
 # laravel_crud
  Simple Laravel
 
+---
+### [PART 9](https://github.com/gzeinnumer/laravel_crud/tree/part_9)
+---
+
 #### PART 10
 * laravel_crud\routes\web.php
 ```php
@@ -43,6 +47,10 @@ class SiswaController extends Controller
 ```
 http://localhost:8081/siswa
 ```
+
+---
+### [PART 11](https://github.com/gzeinnumer/laravel_crud/tree/part_1)
+---
 
 
 ---
