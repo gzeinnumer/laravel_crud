@@ -56,7 +56,7 @@ http://127.0.0.1:8081/siswa/1/edit
 ```
 
 ---
-### [PART 8](https://github.com/gzeinnumer/laravel_crud/tree/part_8)
+### [PART 9](https://github.com/gzeinnumer/laravel_crud/tree/part_9)
 ---
 
 ```
