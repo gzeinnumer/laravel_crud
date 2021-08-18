@@ -2,29 +2,6 @@
  Simple Laravel
 
 ---
-#### PART 1
-```
-composer create-project laravel/laravel laravel_crud
-```
-
----
-#### PART 2
-* laravel_crud\app\Providers
-```php
-use Illuminate\Support\Facades\Schema;
-
-class AppServiceProvider extends ServiceProvider{
-
-    ...
-
-    public function boot()
-    {
-        Schema::defaultStringLength(255);
-    }
-}
-```
-
----
 #### PART 3
 ```
 //.env export SERVER_PORT="8080"
