@@ -1,5 +1,9 @@
 # laravel_crud
  Simple Laravel
+
+---
+### [PART 6](https://github.com/gzeinnumer/laravel_crud/tree/part_6)
+---
  
 #### PART 7
 * laravel_crud\resources\views\siswa\index.blade.php
@@ -85,6 +89,8 @@ class SiswaModel extends Model
 }
 ```
 
+---
+### [PART 8](https://github.com/gzeinnumer/laravel_crud/tree/part_8)
 ---
 
 ```
