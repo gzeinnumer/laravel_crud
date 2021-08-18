@@ -1,6 +1,10 @@
 # laravel_crud
  Simple Laravel
 
+---
+### [PART 4](https://github.com/gzeinnumer/laravel_crud/tree/part_4)
+---
+
 #### PART 5
 * laravel_crud\resources\views\siswa\index.blade.php
 ```php
@@ -27,6 +31,10 @@
 ```php
 http://127.0.0.1:8081/siswa
 ```
+
+---
+### [PART 6](https://github.com/gzeinnumer/laravel_crud/tree/part_6)
+---
 
 ---
 
