@@ -36,8 +36,6 @@ http://127.0.0.1:8081/siswa
 ### [PART 6](https://github.com/gzeinnumer/laravel_crud/tree/part_6)
 ---
 
----
-
 ```
 Copyright 2021 M. Fadli Zein
 ```
