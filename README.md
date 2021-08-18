@@ -2,6 +2,9 @@
  Simple Laravel
 
 ---
+### [PART 2](https://github.com/gzeinnumer/laravel_crud/tree/part_2)
+---
+
 #### PART 3
 ```
 //.env export SERVER_PORT="8080"
@@ -44,6 +47,8 @@ class SiswaController extends Controller
 http://127.0.0.1:8080/siswa
 ```
 
+---
+### [PART 4](https://github.com/gzeinnumer/laravel_crud/tree/part_4)
 ---
 
 ```
