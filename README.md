@@ -1,5 +1,9 @@
 # laravel_crud
  Simple Laravel
+
+---
+### [PART 5](https://github.com/gzeinnumer/laravel_crud/tree/part_5)
+---
  
 #### PART 6
 * laravel_crud\resources\views\siswa\index.blade.php
@@ -75,6 +79,8 @@ https://stackoverflow.com/questions/18672452/left-align-and-right-align-within-d
 </html>
 ```
 
+---
+### [PART 7](https://github.com/gzeinnumer/laravel_crud/tree/part_7)
 ---
 
 ```
