@@ -49,7 +49,7 @@ http://localhost:8081/siswa
 ```
 
 ---
-### [PART 11](https://github.com/gzeinnumer/laravel_crud/tree/part_1)
+### [PART 11](https://github.com/gzeinnumer/laravel_crud/tree/part_11)
 ---
 
 
